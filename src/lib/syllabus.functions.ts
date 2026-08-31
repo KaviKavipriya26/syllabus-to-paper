@@ -252,7 +252,10 @@ function validatePaper(
 
   st.sections.forEach((cfg) => {
     const sec = paper.sections.find((s) => s.name === cfg.name);
-    if (!sec) return problems.push(`Missing ${cfg.name}.`);
+    if (!sec) {
+      problems.push(`Missing ${cfg.name}.`);
+      return;
+    }
     if (sec.questions.length !== cfg.count)
       problems.push(`${cfg.name} has ${sec.questions.length} of ${cfg.count} questions.`);
   });
