@@ -14,7 +14,7 @@ export function Shell({
   children,
   activeStep,
 }: {
-  children: ReactNode;
+  children?: ReactNode;
   activeStep?: string;
 }) {
   return (
